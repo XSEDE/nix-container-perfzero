@@ -9,10 +9,10 @@ let
 #    tk
 #    tcl
   ];
-  R-with-my-packages = rWrapper.override{ packages = with rPackages; [ ggplot2 dplyr xts rbenchmark ]; };
+#  R-with-my-packages = rWrapper.override{ packages = with rPackages; [ ggplot2 dplyr xts rbenchmark ]; };
 in
-{ sc-benchmarkProdEnv = buildEnv {
-  name = "sc-benchmark-prod-env";
+{ PerfZeroProdEnv = buildEnv {
+  name = "PerfZero-prod-env";
   paths = [
     # Always include nix, or environment will break
     # Include bash for base OSes without bash
@@ -25,13 +25,14 @@ in
     python-with-my-packages
     binutils
     gfortran
-    openblas
-    tk
-    bzip2
-    pcre2
-    tcl
-    zlib
-    R-with-my-packages
+#    openblas
+#    tk
+#    bzip2
+#    pcre2
+#    tcl
+#    zlib
+#    R-with-my-packages
+    cudaPackages.cudatoolkit_10
     
     # Benchmark
     
