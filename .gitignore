@@ -1,0 +1,6 @@
+# Testing build image
+test.sif
+
+# Vim files
+*.swp
+
