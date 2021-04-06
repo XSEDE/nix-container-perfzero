@@ -20,8 +20,10 @@ RUN chmod +x /root/.nix-profile/etc/profile.d/nix.sh
 # initiate environment
 RUN $NIXENV && \
     cd /tmp && \
-    bash /root/persist-env.sh /root/prod-env.nix
+    bash /root/persist-env.sh /root/prod-env.nix && \
+    nix-collect-garbage
 
 # Prep dev environment ahead of time
-RUN nix-shell /root/dev.nix
+RUN nix-shell /root/dev.nix && \
+    nix-collect-garbage
 
