@@ -24,6 +24,4 @@ RUN $NIXENV && \
     nix-collect-garbage
 
 # Prep dev environment ahead of time
-RUN nix-shell /root/dev.nix && \
-    nix-collect-garbage
-
+RUN nix-shell /root/dev.nix
