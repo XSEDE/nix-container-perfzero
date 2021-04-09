@@ -1,4 +1,4 @@
-FROM xsede/centos-nix-base:latest
+FROM xsede/centos-nix-base:nix-2.3.10
 
 SHELL ["/bin/bash", "-c"]
 
