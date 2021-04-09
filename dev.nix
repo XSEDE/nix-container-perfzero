@@ -9,25 +9,6 @@ let
     tk
 #    tcl
   ];
-#  R-with-my-packages = rWrapper.override{ packages = with rPackages; [ ggplot2 dplyr xts rbenchmark ]; };
-#  sc-benchmark = stdenv.mkDerivation {
-#    name = "sc-benchmark";
-#    
-#    src = builtins.fetchGit {
-#      rev = "23898d7168d3e51b750fc21951fdfb874ded8d02";
-#      url = "https://github.com/FredHutch/sc-benchmark.git";
-#      ref = "master";
-#    };
-#    phases = "unpackPhase installPhase";
-#    
-#    installPhase = ''
-#      mkdir -p $out/
-#      pwd
-#      echo "CHECKING CONTENTS:"
-#      ls -la
-#      mv ./* $out/
-#    '';
-#  };
 in
 stdenv.mkDerivation {
   name = "PerfZeroDevEnv";
@@ -37,19 +18,14 @@ stdenv.mkDerivation {
     vim
     gdb
     git
-    
+    htop
+
     # Dependencies
     my-python-packages-deps
     python-with-my-packages
     binutils
     gfortran
     openblas
-#    tk
-#    bzip2
-#    pcre2
-#    tcl
-#    zlib
-#    R-with-my-packages
     cudaPackages.cudatoolkit_10
     cudnn
     hdf5
@@ -57,10 +33,14 @@ stdenv.mkDerivation {
     freetype
     # zmq3?
     pkg-config
-    #unzip
-    #curl
+#    unzip
+#    curl
     #libnvinfer5?
-    
+    lsb-release
+#    wget
+#    zip
+    google-cloud-sdk
+ 
     
     # Benchmarking
     
