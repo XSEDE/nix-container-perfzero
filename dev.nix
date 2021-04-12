@@ -5,8 +5,8 @@ let
     absl-py
     scikitlearn
     six
-    google_api_python_client
-    google_cloud_bigquery
+#    google_api_python_client
+#    google_cloud_bigquery
     kaggle
     numpy
     oauth2client
@@ -14,24 +14,24 @@ let
     psutil
     py-cpuinfo
     scipy
-    tensorflow-hub
-    tensorflow-model-optimization
-    tensorflow-datasets
-    tensorflow-addons
-    dataclasses
-    gin-config
-    tf_slim
-    Cython
+#    tensorflow-hub
+#    tensorflow-model-optimization
+#    tensorflow-datasets
+#    tensorflow-addons
+#    dataclasses
+#    gin-config
+#    tf_slim
+#    Cython
     matplotlib
-    pyyaml
+#    pyyaml
     # CV related dependencies
-    opencv-python-headless
-    Pillow
-    pycocotools
+#    opencv-python-headless
+#    Pillow
+#    pycocotools
     # NLP related dependencies
-    seqeval
-    sentencepiece
-    sacrebleu
+#    seqeval
+#    sentencepiece
+#    sacrebleu
   ];
   python-with-my-packages = python3.withPackages my-python-packages;
   my-python-packages-deps = [
@@ -83,6 +83,7 @@ stdenv.mkDerivation {
     # zmq3?
     pkg-config
     unzip
+    gzip
 #    curl
     #libnvinfer5?
     lsb-release
