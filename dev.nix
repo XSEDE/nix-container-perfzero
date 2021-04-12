@@ -5,8 +5,9 @@ let
     absl-py
     scikitlearn
     six
-#    google_api_python_client
-#    google_cloud_bigquery
+    google-api-python-client
+    google-cloud-bigquery
+ #   google_cloud_sdk
     kaggle
     numpy
     oauth2client
@@ -14,29 +15,32 @@ let
     psutil
     py-cpuinfo
     scipy
+    tensorflow
 #    tensorflow-hub
 #    tensorflow-model-optimization
 #    tensorflow-datasets
 #    tensorflow-addons
-#    dataclasses
-#    gin-config
+    dataclasses-json
+    gin-config
 #    tf_slim
-#    Cython
+    cython
     matplotlib
-#    pyyaml
+    pyyaml
     # CV related dependencies
-#    opencv-python-headless
-#    Pillow
+    opencv3
+    pillow
 #    pycocotools
     # NLP related dependencies
 #    seqeval
-#    sentencepiece
+    sentencepiece
 #    sacrebleu
   ];
   python-with-my-packages = python3.withPackages my-python-packages;
   my-python-packages-deps = [
 #    zlib
     tk
+#    google_api_python_client
+#    google_cloud_bigquery
 #    tcl
   ];
   perfzero-benchmark = stdenv.mkDerivation {
@@ -72,6 +76,7 @@ stdenv.mkDerivation {
     # Dependencies
     my-python-packages-deps
     python-with-my-packages
+ #   python37Packages.google_api_python_client
     binutils
     gfortran
     openblas
